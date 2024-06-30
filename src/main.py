@@ -185,7 +185,7 @@ samp_popt_std = np.std(popt[:, 1:], axis=1, ddof=1)
 result = np.array([[popt[0, 0], np.sqrt(pcov[0, 0, 0]), samp_popt_mean[0], samp_popt_std[0], (popt[0, 0]-samp_popt_mean[0])/popt[0, 0], samp_popt_std[0]/popt[0, 0]], 
                    [popt[1, 0], np.sqrt(pcov[0, 1, 1]), samp_popt_mean[1], samp_popt_std[1], (popt[1, 0]-samp_popt_mean[1])/popt[1, 0], samp_popt_std[1]/popt[1, 0]]])
 
-np.savetxt("../data/results.csv", result, delimiter=" & ", fmt='%0.4e')
+np.savetxt("../data/results", result, delimiter=" & ", fmt='%0.4e')
 
 print("chisq/dof: ", chisq[0])
 
@@ -206,10 +206,10 @@ print(data.shape[1])
 np.savetxt(
     "../data/CorrelationFunction.csv",
     np.array([x, data[start:stop, :].mean(1), data[start:stop, :].std(1, ddof=1)/np.sqrt(data.shape[1])]).T,
-    delimiter=" ",
+    delimiter=", ",
 )
 np.savetxt(
     "../data/CorrelationFunctionPrediction.csv",
     np.array([x, pred, dPred]).T,
-    delimiter=" ",
+    delimiter=", ",
 )
