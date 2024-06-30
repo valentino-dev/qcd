@@ -1,0 +1,7 @@
+Neue Fitfunktion mit cosh
+Fehler vom Correlator und Fit Funktion mit mittelung der Bins einzeichnen
+(f_n(t)=correlator_n_t => correlator_t=correaltor_n_t.mean(n))
+Chi^2 pro Freiheitsgrad =~ 1
+
+Tabell:
+t gegen besten Werte für parameter, Chi^2, Bootstrap Mittelwert, Fehler von beiden Paramtetern, Fitwert von Orginalwert

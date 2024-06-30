@@ -1,0 +1,95 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=3.5cm]{geometry}
+\usepackage[]{graphicx}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{wrapfig}
+\usepackage{blindtext}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{nopageno}
+\usepackage{authblk}
+\usepackage{amsmath} % tons of math stuff
+\usepackage{mathtools} % e.g. alignment within matrix
+\usepackage{bm} % provides shorthand for bold in math mode
+\usepackage{esdiff} % provides derivative commands
+\usepackage{xcolor}
+\usepackage{csquotes} % e.g. provides \enquote
+\fancyhf[]{}
+
+% own fig. env. for multicols
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\begin{titlepage}
+    \title{Lattice QCD}
+    \author[1]{Angelo V. Brade\thanks{s72abrad@uni-bonn.de}}
+    \affil[1]{Rheinische Friedrich-Wilhelms-Universität Bonn}
+    \date{\today}
+\end{titlepage}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\leftmark}
+
+
+
+\section{p2gg}
+\subsection{Lower bound}
+\begin{Figure}
+  \centering\resizebox{\textwidth}{!}{\input{LowerBound}}
+  \captionof{figure}{
+    Lower bound for stable correlations.
+  }
+  \label{fig:1.1}
+\end{Figure}
+
+%Es lässt sich erkennen, dass bei \(t_\text{lower}=5\) der Fehler \(\Delta E\) am geringsten ist. Somit werden fortan all vorherien abgeschnitten.
+
+\subsection{Upper bound}
+\begin{Figure}
+  \centering\resizebox{\textwidth}{!}{\input{UpperBound}}
+  \captionof{figure}{
+    Upper bound for stable correlations.
+  }
+  \label{fig:1.2}
+
+\subsection{Results}
+\end{Figure}
+\begin{Figure}
+  \centering\resizebox{\textwidth}{!}{\input{CorrelationFunction.tex}}
+  \captionof{figure}{
+    Lower bound for stable correlations.
+  }
+  \label{fig:1.3}
+\end{Figure}
+
+Wir finden die in Tablle \ref{Tab:1.1} aufgeführten Werte, wobei die Correlatoren von \(t_\text{lower}=16\) und \(t_\text{upper}=80\) ausgewertet wurden, mit \(\chi^2=0.2657\), \(X_0:=\) X ohne Bootstrapping, \(X_\text{boot.}:=\) X mit Bootstrapping, \(\frac{X_0 - X_\text{boot.}}{X_0}:=\) der normierten relativen Abweichung des Bootstrapps zu dem originalem Wert und \(\frac{\sigma_{X_\text{boot.}}}{X_0}:=\) dem normierten Fehler des Bootstrapps.
+
+\begin{center}
+\begin{tabular}{ccccccc}
+  \(X\)&\(X_0\)&\(\sigma X_0\)&\(X_\text{boot.}\)&\(\sigma X_\text{boot.}\)&\(\frac{X_0 - X_\text{boot.}}{X_0}\)&\(\frac{\sigma_{X_\text{boot.}}}{X_0}\)\\
+  \hline
+  C & 3.35e-03 & 1.77e-05 & 3.34e-03 & 2.96e-05 & 4.83e-03 & 8.83e-03\\
+  E & 4.73e-02 & 3.10e-05 & 4.73e-02 & 4.79e-05 & -4.71e-05 & 1.01e-03
+\end{tabular}
+\captionof{table}{Ergebnisse zur p2gg Auswertung.}
+\label{Tab:1.1}
+\end{center}
+
+
+\end{document}
