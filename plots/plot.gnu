@@ -11,7 +11,8 @@ set errorbars .2
 set output "CorrelationFunction.tex"
 filename1 = "../data/CorrelationFunction.csv"
 filename2 = "../data/CorrelationFunctionPrediction.csv"
-set xrange [16:80]
+set yrange [0.006:0.02]
+set xrange [29:50]
 set title "Correlation function"
 set xlabel '$\tau$'
 set ylabel '$\langle x(0)x(\tau)\rangle$'
@@ -19,11 +20,13 @@ set xtics
 set ytics
 set logscale y exp(1)
 plot filename1 using 1:2:3 with yerrorbars pt 0 title "simulation data", \
-     filename2 using 1:2:3 with yerrorbars pt 0 title "fit curve with bootstrapping"
+     filename2 using 1:2:3 with yerrorbars pt 0 title "fit curve with bootstrapping",\
+     '../data/CorrelationFunction0Prediction.csv' using 1:2:3:4 with yerrorbars pt 0 title "fit curve without bootstrapping"
 
 set output "LowerBound.tex"
 set title "Lower bound"
 set xrange [12:75]
+unset yrange
 set xtics
 set ytics
 set xlabel '$t_{\text{lower}}$'

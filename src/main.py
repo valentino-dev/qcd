@@ -208,8 +208,15 @@ np.savetxt(
     np.array([x, data[start:stop, :].mean(1), data[start:stop, :].std(1, ddof=1)/np.sqrt(data.shape[1])]).T,
     delimiter=", ",
 )
+
 np.savetxt(
     "../data/CorrelationFunctionPrediction.csv",
     np.array([x, pred, dPred]).T,
+    delimiter=", ",
+)
+
+np.savetxt(
+    "../data/CorrelationFunction0Prediction.csv",
+        np.array([x, func(x, *popt[:, 0]), func(x, *(popt[:, 0] + np.sqrt(np.diag(pcov[0])))), func(x, *(popt[:, 0] - np.sqrt(np.diag(pcov[0]))))]).T,
     delimiter=", ",
 )

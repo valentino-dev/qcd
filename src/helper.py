@@ -72,6 +72,7 @@ def calcCorrelation(
         ydata,
         p0=p0,
         sigma=sigma,
+        absolute_sigma=False,
         **options
     )
     
@@ -95,6 +96,7 @@ def calcCorrelation(
             ydata,
             p0=p0,
             sigma=sigma,
+            absolute_sigma=False,
             **options
         )
 
