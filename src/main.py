@@ -210,6 +210,12 @@ np.savetxt(
 )
 
 np.savetxt(
+    "../data/covarianzmatrix.csv",
+    pcov[0],
+    delimiter=", ",
+)
+
+np.savetxt(
     "../data/CorrelationFunctionPrediction.csv",
     np.array([x, pred, dPred]).T,
     delimiter=", ",
