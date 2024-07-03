@@ -79,7 +79,7 @@
   \label{fig:1.3}
 \end{Figure}
 
-Wir finden die in Tablle \ref{Tab:1.1} aufgeführten Werte, wobei die Correlatoren von \(t_\text{lower}=16\) und \(t_\text{upper}=80\) ausgewertet wurden, mit \(\chi^2=0.884\), \(X_0:=\) X ohne Bootstrapping, \(X_\text{boot.}:=\) X mit Bootstrapping, \(\frac{X_0 - X_\text{boot.}}{X_0}:=\) der normierten relativen Abweichung des Bootstrapps zu dem originalem Wert und \(\frac{\sigma_{X_\text{boot.}}}{X_0}:=\) dem normierten Fehler des Bootstrapps.
+Wir finden die in Tablle \ref{Tab:1.1} aufgeführten Werte, wobei die Correlatoren von \(t_\text{lower}=16\) und \(t_\text{upper}=64\) ausgewertet wurden, mit \(\chi^2=0.884\), \(X_0:=\) X ohne Bootstrapping, \(X_\text{boot.}:=\) X mit Bootstrapping, \(\frac{X_0 - X_\text{boot.}}{X_0}:=\) der normierten relativen Abweichung des Bootstrapps zu dem originalem Wert und \(\frac{\sigma_{X_\text{boot.}}}{X_0}:=\) dem normierten Fehler des Bootstrapps.
 
 
 %\pgfplotstableread[col sep=comma, header=false]{../data/results}\loadedtable
@@ -91,9 +91,9 @@ Wir finden die in Tablle \ref{Tab:1.1} aufgeführten Werte, wobei die Correlator
 \begin{tabular}{ccccccc}
   \(X\)&\(X_0\)&\(\sigma X_0\)&\(X_\text{boot.}\)&\(\sigma X_\text{boot.}\)&\(\frac{X_0 - X_\text{boot.}}{X_0}\)&\(\frac{\sigma_{X_\text{boot.}}}{X_0}\)\\
   \hline
-  \pgfplotstabletypeset[col sep=comma, header=false]{../data/results}
-  %C & 3.3644e-03 & 1.7799e-05 & 3.3545e-03 & 2.1428e-05 & 2.9339e-03 & 6.3691e-03\\
-  %E & 4.7360e-02 & 3.9729e-05 & 4.7361e-02 & 4.3186e-05 & -2.0330e-05 & 9.1187e-04
+  %\pgfplotstabletypeset[col sep=comma, header=false]{../data/results}
+  C & 3.3644e-03 & 1.7799e-05 & 3.3545e-03 & 2.1428e-05 & 2.9339e-03 & 6.3691e-03\\
+  E & 4.7360e-02 & 3.9729e-05 & 4.7361e-02 & 4.3186e-05 & -2.0330e-05 & 9.1187e-04
 \end{tabular}
 \captionof{table}{Ergebnisse zur p2gg Auswertung.}
 \label{Tab:1.1}

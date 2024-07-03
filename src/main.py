@@ -83,6 +83,7 @@ for i in range(start.shape[0]):
 np.savetxt("../data/LowerBound.csv", np.array([start, chi_sq]).T, delimiter=" ")
 exit()
 '''
+'''
 start = 16
 stop = np.arange(80, 40, -1)
 print(stop)
@@ -109,7 +110,6 @@ np.savetxt(
     np.array([stop, chi_sq]).T,
     delimiter=" ",
 )
-'''
 '''
 
 """
