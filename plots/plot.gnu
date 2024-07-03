@@ -27,10 +27,11 @@ set output "LowerBound.tex"
 set title "Lower bound"
 set xrange [12:75]
 unset yrange
-set xtics
+set xtics 3
 set ytics
 set xlabel '$t_{\text{lower}}$'
-set ylabel '$\log_e[\chi^2/2]$'
+set ylabel '$\log_e[\chi^2/dof]$'
+set ylabel '$\chi^2/$dof'
 #set logscale y exp(1)
 unset logscale
 plot "../data/LowerBound.csv" using 1:2 title '$\chi^2$' pt 8 lw 4 lc rgb '#beaed4'
@@ -39,10 +40,10 @@ unset logscale
 set output "UpperBound.tex"
 set title "Upper bound"
 set xrange [30:80]
-set xtics
+set xtics 2
 set ytics
 set xlabel '$t_{\text{upper}}$'
-set ylabel '$\chi^2/2$'
+set ylabel '$\chi^2/$dof'
 plot "../data/UpperBound.csv" using 1:2 title '$\chi^2$' pt 8 lw 4 lc rgb '#beaed4'
 
 

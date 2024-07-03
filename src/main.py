@@ -60,7 +60,6 @@ data_err = data_err.T
 # helper.plotCEPBS(corr, path=argv[1], lattice_times=np.arange(0, 6, 1), bin_sizes=np.arange(1, 11, 1))
 
 '''
-
 stop = 80
 start = np.arange(1, 75)
 
@@ -84,8 +83,7 @@ for i in range(start.shape[0]):
 np.savetxt("../data/LowerBound.csv", np.array([start, chi_sq]).T, delimiter=" ")
 exit()
 '''
-'''
-start = 30
+start = 16
 stop = np.arange(80, 40, -1)
 print(stop)
 
@@ -111,6 +109,7 @@ np.savetxt(
     np.array([stop, chi_sq]).T,
     delimiter=" ",
 )
+'''
 '''
 
 """
@@ -167,8 +166,8 @@ exit()
 '''
 
 # fit and bootstrap parameters
-start = 30
-stop = 50
+start = 16
+stop = 64
 popt, pcov, chisq = helper.calcCorrelation(
     np.arange(start, stop, 1),
     data[start:stop, :],
@@ -182,10 +181,10 @@ popt, pcov, chisq = helper.calcCorrelation(
 popt = popt.T
 samp_popt_mean = np.mean(popt[:, 1:], axis=1)
 samp_popt_std = np.std(popt[:, 1:], axis=1, ddof=1)
-result = np.array([[popt[0, 0], np.sqrt(pcov[0, 0, 0]), samp_popt_mean[0], samp_popt_std[0], (popt[0, 0]-samp_popt_mean[0])/popt[0, 0], samp_popt_std[0]/popt[0, 0]], 
-                   [popt[1, 0], np.sqrt(pcov[0, 1, 1]), samp_popt_mean[1], samp_popt_std[1], (popt[1, 0]-samp_popt_mean[1])/popt[1, 0], samp_popt_std[1]/popt[1, 0]]])
+result = np.array([[0, popt[0, 0], np.sqrt(pcov[0, 0, 0]), samp_popt_mean[0], samp_popt_std[0], (popt[0, 0]-samp_popt_mean[0])/popt[0, 0], samp_popt_std[0]/popt[0, 0]], 
+                   [0, popt[1, 0], np.sqrt(pcov[0, 1, 1]), samp_popt_mean[1], samp_popt_std[1], (popt[1, 0]-samp_popt_mean[1])/popt[1, 0], samp_popt_std[1]/popt[1, 0]]])
 
-np.savetxt("../data/results", result, delimiter=" & ", fmt='%0.4e')
+np.savetxt("../data/results", result, delimiter=", ", fmt='%0.4e')
 
 print("chisq/dof: ", chisq[0])
 
