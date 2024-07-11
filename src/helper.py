@@ -60,6 +60,7 @@ def calcCorrelation(
 
     # setting arrays
     sigma = np.cov(y)/y.shape[1]
+    print(y.shape[1])
     popt = np.zeros((resamples + 1, len(p0)))
     pcov = np.zeros((resamples + 1, len(p0), len(p0)))
     red_chi_sq = np.zeros(resamples + 1)
