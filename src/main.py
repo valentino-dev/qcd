@@ -209,8 +209,13 @@ np.savetxt(
 )
 
 np.savetxt(
-    "../data/covarianzmatrix.csv",
+    "../data/parameter_covarianzmatrix.csv",
     pcov[0],
+    delimiter=", ",
+)
+np.savetxt(
+    "../data/covarianzmatrix.csv",
+    np.cov(data[start:stop])/data.shape[1],
     delimiter=", ",
 )
 
