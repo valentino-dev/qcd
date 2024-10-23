@@ -87,6 +87,7 @@ def calcCorrelation(
     # Bootstraping
     for i in range(1, resamples+1):
         ysample = y[:, np.random.choice(y.shape[1], size=y.shape[1], replace=True)]
+        print(y.shape[1])
         ydata = ysample.mean(1)
         sigma = np.cov(ysample)/ysample.shape[1]
 

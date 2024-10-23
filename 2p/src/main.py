@@ -180,7 +180,9 @@ popt, pcov, chisq = helper.calcCorrelation(
 # Setzte alles für den Output
 popt = popt.T
 samp_popt_mean = np.mean(popt[:, 1:], axis=1)
+print(popt.shape)
 samp_popt_std = np.std(popt[:, 1:], axis=1, ddof=1)
+print(samp_popt_std)
 result = np.array([[0, popt[0, 0], np.sqrt(pcov[0, 0, 0]), samp_popt_mean[0], samp_popt_std[0], (popt[0, 0]-samp_popt_mean[0])/popt[0, 0], samp_popt_std[0]/popt[0, 0]], 
                    [0, popt[1, 0], np.sqrt(pcov[0, 1, 1]), samp_popt_mean[1], samp_popt_std[1], (popt[1, 0]-samp_popt_mean[1])/popt[1, 0], samp_popt_std[1]/popt[1, 0]]])
 

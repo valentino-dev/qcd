@@ -1,0 +1,85 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=3.5cm]{geometry}
+\usepackage[]{graphicx}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{inputenc}
+\usepackage{breqn}
+\usepackage{titlesec}
+\usepackage{wrapfig}
+\usepackage{blindtext}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{nopageno}
+\usepackage{authblk}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage[ISO]{diffcoeff}
+\usepackage{xcolor}
+\usepackage{csquotes}
+\usepackage{siunitx}
+\usepackage{circuitikz}
+\fancyhf[]{}
+
+% own fig. env. for multicols
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\begin{titlepage}
+    \title{Lattice QCD}
+    \author[1]{Angelo V. Brade\thanks{s72abrad@uni-bonn.de}}
+    \affil[1]{Rheinische Friedrich-Wilhelms-Universität Bonn}
+    \date{\today}
+\end{titlepage}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\leftmark}
+
+\begin{multicols}{2}
+\section{3 Punkt Funktionen}
+3-Punkt Funktionen aus\\ \texttt{p2gg_local_neutral_light.p-lvc-lvc.fl1.} \\ \texttt{qx0_qy0_qz0.gseq_4.tseq_15.px0_py-2_pz2.h5}.
+\subsection{}
+\begin{Figure}
+  \centering\resizebox{\textwidth}{!}{\input{p3f_mu1}}
+  \captionof{figure}{
+    3-Punkt Funktion mit $\mu=1$
+  }
+  \label{fig:1.1}
+\end{Figure}
+\begin{Figure}
+  \centering\resizebox{\textwidth}{!}{\input{p3f_mu2}}
+  \captionof{figure}{
+    3-Punkt Funktion mit $\mu=2$
+  }
+  \label{fig:1.2}
+\end{Figure}
+\begin{Figure}
+  \centering\resizebox{\textwidth}{!}{\input{p3f_mu3}}
+  \captionof{figure}{
+    3-Punkt Funktion mit $\mu=3$
+  }
+  \label{fig:1.3}
+\end{Figure}
+\begin{Figure}
+  \centering\resizebox{\textwidth}{!}{\input{p3f_mu4}}
+  \captionof{figure}{
+    3-Punkt Funktion mit $\mu=4$
+  }
+  \label{fig:1.4}
+\end{Figure}
+Hierbei wurde der shift $e^{-\mathrm{i}(\vec{p}+\vec{q})\vec{r}}$ mit $\vec{q}=\vec{0}$ als $\cos{(-\vec{p}\cdot\vec{r})}$ interpretiert, da wir nur den Realteil betrachten.
+
+
+\end{multicols}
+\end{document}

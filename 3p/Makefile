@@ -8,3 +8,6 @@ run:
 plot:
 	cd plot;\
 	gnuplot plot.gnu
+
+copy:
+	cp -t latex/ plot/*.tex plot/*.pdf

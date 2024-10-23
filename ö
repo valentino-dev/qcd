@@ -1,0 +1,19 @@
+set term cairolatex
+set output 'p3f.tex'
+#set yrange [-1e-4:1e-4]
+#plot '../data/p3f_pd.dat' using 0:3:4 pt 0 with yerrorbars title 'test'
+mu=1
+set output 'p3f_mu'.mu.'.tex'
+plot for [i=(mu-1)*4+1:(mu-1)*4+4] '../data/p3f_pd.dat' using 0:i*2-1:i*2 with yerrorbars pt 0 title '$\nu='.i.'$'
+
+mu=2
+set output 'p3f_mu'.mu.'.tex'
+plot for [i=(mu-1)*4+1:(mu-1)*4+4] '../data/p3f_pd.dat' using 0:i*2-1:i*2 with yerrorbars pt 0 title '$\nu='.i.'$'
+
+mu=3
+set output 'p3f_mu'.mu.'.tex'
+plot for [i=(mu-1)*4+1:(mu-1)*4+4] '../data/p3f_pd.dat' using 0:i*2-1:i*2 with yerrorbars pt 0 title '$\nu='.i.'$'
+
+mu=4
+set output 'p3f_mu'.mu.'.tex'
+plot for [i=(mu-1)*4+1:(mu-1)*4+4] '../data/p3f_pd.dat' using 0:i*2-1:i*2 with yerrorbars pt 0 title '$\nu='.i.'$'

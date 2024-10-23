@@ -11,9 +11,13 @@ def func(x, *args):
     return args[0] * np.cosh(-args[1] * (x-80))
 
 
+path = "data/p2gg_local_neutral_light.p-lvc-lvc.fl1.qx0_qy0_qz0.gseq_4.tseq_15.px0_py-2_pz2.h5"
 # load and order data
-f = h5.File("data/p2gg_local_neutral_light.p-lvc-lvc.fl1.qx0_qy0_qz0.gseq_4.tseq_15.px0_py-2_pz2.h5", "r")
-p = np.array([0, -2, 2])
+f = h5.File(path, "r")
+px = int(path.split("px")[1].split("_")[0])
+py = int(path.split("py")[1].split("_")[0])
+pz = int(path.split("pz")[1].split(".")[0])
+p = np.array([px, py, pz])
 T = 160
 
 file = f["stream_a/"]
@@ -30,7 +34,7 @@ for keyD0 in file:
 
         arr = file[keyD0][keyD1][:]
         arr = arr[:, :, ::2]                        # nur den Realteil
-        arr = arr * np.sin(-p@r)
+        arr = arr * np.cos(-p@r)
 
         config.append(np.roll(arr, shift=-t, axis=-1))
 
